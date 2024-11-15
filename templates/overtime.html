@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}加班额外付费 - 付费上班有限公司{% endblock %}
+
+{% block content %}
+<div class="overtime-container">
+    <h1 class="section-title">加班额外付费</h1>
+    <p class="section-subtitle">解锁更多加班特权，享受无限加班乐趣</p>
+
+    <div class="overtime-options">
+        <div class="overtime-card">
+            <div class="overtime-header">
+                <i class="fas fa-moon"></i>
+                <h3>深夜加班套餐</h3>
+            </div>
+            <div class="overtime-price">
+                <span class="amount">¥888</span>
+                <span class="unit">/小时</span>
+            </div>
+            <div class="overtime-features">
+                <p>享受寂静的办公环境</p>
+                <p>独享办公空调</p>
+                <p>免费咖啡续杯</p>
+            </div>
+            <a href="{{ url_for('payment') }}" class="overtime-button">立即预订</a>
+        </div>
+
+        <div class="overtime-card premium">
+            <div class="overtime-header">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>周末加班套餐</h3>
+            </div>
+            <div class="overtime-price">
+                <span class="amount">¥1,888</span>
+                <span class="unit">/天</span>
+            </div>
+            <div class="overtime-features">
+                <p>专属工位预留</p>
+                <p>加班餐补（自费）</p>
+                <p>24小时空调保障</p>
+            </div>
+            <a href="{{ url_for('payment') }}" class="overtime-button">马上体验</a>
+        </div>
+
+        <div class="overtime-card luxury">
+            <div class="overtime-header">
+                <i class="fas fa-calendar-week"></i>
+                <h3>节假日加班套餐</h3>
+            </div>
+            <div class="overtime-price">
+                <span class="amount">¥3,888</span>
+                <span class="unit">/天</span>
+            </div>
+            <div class="overtime-features">
+                <p>VIP工位预留</p>
+                <p>专属泡面柜</p>
+                <p>加班荣誉证书</p>
+            </div>
+            <a href="{{ url_for('payment') }}" class="overtime-button">尊享预订</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

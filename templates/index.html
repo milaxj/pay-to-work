@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - 付费上班有限公司{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1 class="hero-title">付费上班，让你实现财务负增长的新境界！</h1>
+    <p class="hero-subtitle">全球首屈一指的"员工反向收入"服务商</p>
+    <a href="{{ url_for('join') }}" class="btn" style="--clr: #0f0;"><span>立即加入</span></a>
+</div>
+
+<div class="features">
+    <div class="feature-card">
+        <div class="face front">
+            <i class="fas fa-money-bill-wave"></i>
+            <h3>上班权购买</h3>
+        </div>
+        <div class="face back">
+            <p>多种套餐任您选择，从"经济型负收入体验"到"奢华型职场奉献套餐"</p>
+            <a href="{{ url_for('work_rights') }}" class="feature-button">
+                <i class="fas fa-arrow-right"></i> 立即购买
+            </a>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="face front">
+            <i class="fas fa-clock"></i>
+            <h3>加班额外付费</h3>
+        </div>
+        <div class="face back">
+            <p>加班机会难得，当然要多付费！体验"奉献自我"的职场真谛</p>
+            <a href="{{ url_for('overtime') }}" class="feature-button">
+                <i class="fas fa-arrow-right"></i> 马上充值
+            </a>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="face front">
+            <i class="fas fa-chart-line"></i>
+            <h3>绩效充值</h3>
+        </div>
+        <div class="face back">
+            <p>解锁升职新姿势，购买即可立刻变身虚拟部门主管</p>
+            <a href="{{ url_for('performance') }}" class="feature-button">
+                <i class="fas fa-arrow-right"></i> 升职充值
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
