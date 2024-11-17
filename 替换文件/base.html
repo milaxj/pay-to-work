@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}付费上班有限公司{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css', _external=True) }}?v=1.1">
+    <!-- 添加 Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -40,4 +41,4 @@
     <!-- 然后加载我们的脚本 -->
     <script src="/static/js/main.js?v=1"></script>
 </body>
-</html> 
+</html>

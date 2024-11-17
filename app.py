@@ -1,6 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, 
+    static_url_path='/static', 
+    static_folder='static'
+)
+
+# 添加上下文处理器来处理静态文件
+@app.context_processor
+def utility_processor():
+    return dict(static_url=lambda filename: url_for('static', filename=filename))
 
 @app.route('/')
 def index():

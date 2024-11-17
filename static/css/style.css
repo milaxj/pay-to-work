@@ -581,8 +581,11 @@ footer {
 }
 
 .package-list {
-    display: grid;
-    gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem 0;
 }
 
 .package-item {
@@ -1055,7 +1058,7 @@ footer {
     position: absolute;
     top: var(--y);
     left: var(--x);
-    transform: translate(-90%, -95%);
+    transform: translate(-30%, -30%);
     width: 200px;
     height: 200px;
     background: radial-gradient(var(--clr), transparent, transparent); 
@@ -1073,4 +1076,106 @@ footer {
     inset: 2px;
     background-color: rgba(45, 45, 45, 1);
     border-radius: 48px;
+}
+
+/* 可以添加自定义删除线样式 */
+del {
+    color: var(--text-secondary);
+    text-decoration-color: var(--accent-color);  /* 设置删除线颜色 */
+    text-decoration-thickness: 2px;  /* 设置删除线粗细 */
+}
+
+/* 修改支付页面的卡片样式 */
+.payment-content .package-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem 0;
+}
+
+.payment-content .feature-card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    background: var(--secondary-color);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.payment-content .feature-card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.payment-content .feature-card .face.front {
+    background: var(--secondary-color);
+    transform-origin: bottom;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.payment-content .feature-card .face.front img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.payment-content .feature-card .face.front p {
+    color: var(--accent-color);
+    font-size: 1.2em;
+}
+
+.payment-content .feature-card .face.back {
+    background: var(--secondary-color);
+    transform-origin: top;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.payment-content .feature-card:hover .face.back {
+    transform: translateY(0);
+}
+
+.payment-content .feature-card .face.back h3 {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.payment-content .feature-card .face.back .price {
+    font-size: 2em;
+    color: var(--accent-color);
+    margin: 15px 0;
+}
+
+.payment-content .feature-card .face.back img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.payment-content .feature-card .face.back p {
+    color: var(--accent-color);
+    font-size: 1.2em;
 }
