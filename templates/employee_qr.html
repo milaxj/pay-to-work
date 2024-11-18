@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}员工二维码 - 付费上班有限公司{% endblock %}
+
+{% block content %}
+<div class="qr-container">
+    <h1 class="section-title">员工付费二维码</h1>
+    <div class="qr-content">
+        <img src="{{ url_for('static', filename='images/a23215586c4a4a6faf59d454845057cb.jpg') }}" alt="员工付费二维码" class="qr-image">
+        <p class="qr-text">请使用微信扫描上方二维码进行付费</p>
+    </div>
+</div>
+{% endblock %}
