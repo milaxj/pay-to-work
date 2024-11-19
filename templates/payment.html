@@ -3,37 +3,68 @@
 {% block title %}支付页面 - 付费上班有限公司{% endblock %}
 
 {% block content %}
-<div class="payment-container">
-    <h1 class="section-title">充值找回密码</h1>
-    <div class="payment-content">
-        <div class="payment-info">
-            <h2>找回密码说明 <del>先付款，能不能找回另说</del></h2>
-            <p class="payment-instruction">请选择套餐并扫码支付 <del>不会真有人觉得这么便宜就能找回密码吧？</del></p>
-            <div class="package-list">
-                <div class="feature-card">
-                    <div class="face front">
-                        <h3>微信扫码找回</h3>
-                        <p class="description">体验被客服忽悠的快感，享受996等待找回密码的乐趣（不一定能找回）</p>
-                    </div>
-                    <div class="face back">
-                        <img src="{{ url_for('static', filename='images/微信支付.jpg') }}" alt="1元支付码" class="qr-code-image">
-                        <p>微信扫码支付</p>
-                    </div>
+<div class="container payment-container">
+    <h1 class="section-title text-center">充值找回密码</h1>
+    <div class="payment-info">
+        <h2 class="card-title">找回密码说明 <del>先付款，能不能找回另说</del></h2>
+        <p class="payment-instruction">请选择套餐并扫码支付 <del>不会真有人觉得这么便宜就能找回密码吧？</del></p>
+        
+        <div class="package-list">
+            <div class="feature-card card">
+                <div class="face front">
+                    <h3 class="card-title">微信扫码找回</h3>
+                    <p class="card-text">体验被客服忽悠的快感，享受996等待找回密码的乐趣（不一定能找回）</p>
                 </div>
-
-                <div class="feature-card">
-                    <div class="face front">
-                        <h3>支付宝扫码找回</h3>
-                        <p class="description">享受被忽悠的体验，可以24小时等待客服不回复（依然不一定能找回）</p>
-                    </div>
-                    <div class="face back">
-                        <img src="{{ url_for('static', filename='images/mmexport1731907227286.jpg') }}" alt="5元支付码" class="qr-code-image">
-                        <p>支付包扫码支付</p>
-                    </div>
+                <div class="face back">
+                    <img src="{{ url_for('static', filename='images/微信支付.jpg') }}" 
+                         alt="1元支付码" 
+                         class="qr-code-image">
+                    <p class="text-center">微信扫码支付</p>
                 </div>
             </div>
-            <p class="disclaimer">温馨提示：所有套餐均不保证找回密码，但保证您的钱包会变轻。如有异议，欢迎购买我们的申诉服务套餐。</p>
+
+            <div class="feature-card card">
+                <div class="face front">
+                    <h3 class="card-title">支付宝扫码找回</h3>
+                    <p class="card-text">享受被忽悠的体验，可以24小时等待客服不回复（依然不一定能找回）</p>
+                </div>
+                <div class="face back">
+                    <img src="{{ url_for('static', filename='images/mmexport1731907227286.jpg') }}" 
+                         alt="5元支付码" 
+                         class="qr-code-image">
+                    <p class="text-center">支付包扫码支付</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="disclaimer text-center">
+            温馨提示：所有套餐均不保证找回密码，但保证您的钱包会变轻。如有异议，欢迎购买我们的申诉服务套餐。
+        </p>
+        
+        <div class="text-center mt-3">
+            <a href="{{ url_for('employee_portal') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> 返回登录
+            </a>
         </div>
     </div>
 </div>
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            if (href.startsWith('/#')) {
+                e.preventDefault();
+                window.location.href = href;
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
 {% endblock %} 

@@ -1,0 +1,447 @@
+/* 公共组件样式 */
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 卡片样式 */
+.card {
+    padding: var(--spacing-medium);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* 表单样式 */
+.form-group {
+    margin-bottom: var(--spacing-medium);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+/* 节标题样式 */
+.section-title {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-medium);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: var(--spacing-large);
+}
+
+/* 卡片标题样式 */
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-small);
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 文本内容样式 */
+.text-content {
+    line-height: 1.6;
+    margin-bottom: var(--spacing-medium);
+}
+
+/* 图片样式 */
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    margin: var(--spacing-medium) 0;
+}
+
+/* 导航链接样式 */
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* 员工入口链接特殊样式 */
+.nav-link.employee-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+
+/* 性能评级样式 */
+.performance-rating {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin: var(--spacing-medium) 0;
+}
+
+/* 价格标签样式 */
+.performance-price {
+    text-align: center;
+    margin: var(--spacing-medium) 0;
+}
+
+.performance-price del {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.performance-price span {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* 包装头部样式 */
+.package-header {
+    text-align: center;
+    margin-bottom: var(--spacing-medium);
+}
+
+.package-header i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-small);
+}
+
+/* 模态框标题样式 */
+.modal-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-medium);
+}
+
+/* 关闭按钮样式 */
+.close {
+    position: absolute;
+    right: var(--spacing-medium);
+    top: var(--spacing-medium);
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--text-color);
+}
+
+/* 添加加载动画 */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: rotate 1s linear infinite;
+}
+
+/* 添加波纹效果 */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    border-radius: inherit;
+}
+
+.ripple:active::after {
+    transform: scale(2);
+    opacity: 0;
+}
+
+/* 添加闪光效果 */
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    to {
+        left: 150%;
+    }
+}
+
+/* 滚动指示器 */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary-color);
+    z-index: 1001;
+    width: 0;
+    transition: width 0.2s ease;
+}
+
+/* 滚动按钮 */
+.scroll-down-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.scroll-down-button:hover {
+    transform: translateY(-2px);
+    background: var(--secondary-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.scroll-down-button i {
+    animation: bounce 2s infinite;
+}
+
+/* 滚动按钮动画 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* 导航菜单优化 */
+.nav-menu {
+    /* 删除或注释掉以下样式 */
+    /*
+    position: fixed;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    */
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+/* 员工入口链接特殊样式 */
+.nav-link.employee-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+
+/* 豪华卡片特效 */
+.luxury {
+    border: 2px solid #FFD700 !important;
+    background: linear-gradient(145deg, var(--background-color), var(--background-alt)) !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* 限时优惠标签样式 */
+.sale-tag {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: linear-gradient(45deg, #ff4444, #ff6b6b) !important;  /* 红色渐变 */
+    color: white !important;
+    padding: 0.5rem 2rem;
+    transform: rotate(45deg);
+    box-shadow: var(--shadow-sm);
+    animation: pulse 2s infinite;
+    z-index: 10;
+    font-weight: bold;
+}
+
+/* 豪华卡片价格样式 */
+.luxury .performance-price {
+    position: relative;
+    z-index: 1;
+}
+
+.luxury .performance-price del {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.luxury .performance-price span {
+    color: #FFD700;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* 豪华卡片光效 */
+.luxury::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 215, 0, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: rotate(45deg) scale(1);
+    }
+    50% {
+        transform: rotate(45deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(45deg) scale(1);
+    }
+}
+ 

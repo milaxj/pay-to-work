@@ -3,15 +3,15 @@
 {% block title %}上班权购买 - 付费上班有限公司{% endblock %}
 
 {% block content %}
-<div class="work-rights-container">
-    <h1 class="section-title">上班权购买</h1>
-    <p class="section-subtitle">选择您心仪的上班套餐，开启付费上班之旅</p>
+<div class="container work-rights-container">
+    <h1 class="section-title text-center">上班权购买</h1>
+    <p class="section-subtitle text-center">选择您心仪的上班套餐，开启付费上班之旅</p>
 
     <div class="packages-grid">
         <div class="package-card">
             <div class="package-header">
                 <i class="fas fa-chair"></i>
-                <h3>基础工位套餐</h3>
+                <h3 class="card-title">基础工位套餐</h3>
             </div>
             <ul class="package-features">
                 <li><i class="fas fa-check"></i> 普通办公椅</li>
@@ -25,7 +25,7 @@
         <div class="package-card premium">
             <div class="package-header">
                 <i class="fas fa-chair-office"></i>
-                <h3>精英工位套餐</h3>
+                <h3 class="card-title">精英工位套餐</h3>
             </div>
             <ul class="package-features">
                 <li><i class="fas fa-check"></i> 人体工学椅</li>
@@ -40,7 +40,7 @@
             <div class="sale-tag">限时优惠</div>
             <div class="package-header">
                 <i class="fas fa-crown"></i>
-                <h3>至尊工位套餐</h3>
+                <h3 class="card-title">至尊工位套餐</h3>
             </div>
             <div class="performance-price">
                 <del>¥99,999</del><br>
@@ -57,17 +57,16 @@
     </div>
 </div>
 
-<!-- 添加模态框 -->
+<!-- 模态框 -->
 <div id="paymentModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
+        <h2 id="modalTitle" class="modal-title"></h2>
         <img id="modalQR" src="" alt="支付二维码" class="modal-image">
-        <p class="modal-text">请使用微信扫码支付</p>
+        <p class="modal-text text-center">请使用微信扫码支付</p>
     </div>
 </div>
 
-<!-- 添加JavaScript -->
 {% block extra_js %}
 <script>
 function showModal(type) {
@@ -75,7 +74,6 @@ function showModal(type) {
     const modalTitle = document.getElementById('modalTitle');
     const modalQR = document.getElementById('modalQR');
     
-    // 根据套餐类型设置不同的标题和二维码
     switch(type) {
         case 'basic':
             modalTitle.textContent = '基础工位套餐';
@@ -91,6 +89,11 @@ function showModal(type) {
             break;
     }
     
+    modalQR.onerror = function() {
+        console.error('图片加载失败:', this.src);
+        this.src = "{{ url_for('static', filename='images/微信支付.jpg') }}";
+    };
+    
     modal.style.display = 'block';
 }
 
@@ -98,13 +101,29 @@ function closeModal() {
     document.getElementById('paymentModal').style.display = 'none';
 }
 
-// 点击模态框外部关闭
 window.onclick = function(event) {
     const modal = document.getElementById('paymentModal');
     if (event.target == modal) {
         modal.style.display = 'none';
     }
 }
+
+// 添加导航链接处理
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // 如果是首页内部导航链接
+            if (href.startsWith('/#')) {
+                e.preventDefault();
+                window.location.href = href; // 直接跳转到首页对应部分
+            }
+        });
+    });
+});
 </script>
 {% endblock %}
 {% endblock %} 

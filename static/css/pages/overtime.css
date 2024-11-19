@@ -1,0 +1,156 @@
+/* 加班页面样式 */
+
+/* 加班页面容器 */
+.overtime-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+    margin-top: 60px; /* 为固定导航栏留出空间 */
+}
+
+/* 加班套餐网格 */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-large);
+    margin-top: 3rem;
+}
+
+/* 加班套餐卡片 */
+.package-card {
+    background: var(--background-color);
+    padding: var(--spacing-large);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+/* 高级套餐样式 */
+.package-card.premium {
+    border: 2px solid var(--primary-color);
+}
+
+/* 豪华套餐样式 */
+.package-card.luxury {
+    background: linear-gradient(145deg, var(--background-color), var(--background-alt));
+    border: 2px solid var(--accent-color);
+}
+
+/* 套餐头部 */
+.package-header {
+    margin-bottom: var(--spacing-medium);
+}
+
+.package-header i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 套餐特性列表 */
+.package-features {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.package-features li {
+    margin: 1rem 0;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.package-features i {
+    color: var(--primary-color);
+}
+
+/* 价格标签 */
+.performance-price {
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+.performance-price del {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.performance-price span {
+    display: block;
+    color: var(--accent-color);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* 限时优惠标签 */
+.sale-tag {
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 2rem;
+    transform: rotate(45deg);
+    box-shadow: var(--shadow-sm);
+    animation: pulse 2s infinite;
+}
+
+/* 按钮样式 */
+.package-button {
+    width: 80%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.package-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: var(--secondary-color);
+}
+
+/* 动画效果 */
+@keyframes pulse {
+    0% {
+        transform: rotate(45deg) scale(1);
+    }
+    50% {
+        transform: rotate(45deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(45deg) scale(1);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-medium);
+    }
+
+    .package-card {
+        padding: var(--spacing-medium);
+    }
+
+    .sale-tag {
+        font-size: 0.9rem;
+        padding: 0.3rem 1.5rem;
+    }
+} 

@@ -1,0 +1,12 @@
+css/
+├── common/
+│   ├── base.css      # 基础样式
+│   ├── layout.css    # 布局样式
+│   ├── components.css # 公共组件样式
+│   └── utilities.css  # 工具类样式
+├── pages/
+│   ├── about.css     # 关于页面样式
+│   ├── employee.css  # 员工相关页面样式
+│   ├── home.css      # 首页样式
+│   └── products.css  # 产品相关页面样式
+└── style.css         # 主样式文件(导入其他样式) 

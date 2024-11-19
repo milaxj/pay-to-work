@@ -1,0 +1,110 @@
+/* 用户评价页面样式 */
+
+/* 评价容器 */
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+    margin-top: 60px; /* 为固定导航栏留出空间 */
+}
+
+/* 评价网格 */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-large);
+}
+
+/* 评价卡片 */
+.testimonial-card {
+    background: var(--background-alt);
+    padding: var(--spacing-large);
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 评分样式 */
+.testimonial-rating {
+    color: #ffd700;
+    margin-bottom: var(--spacing-medium);
+    display: flex;
+    gap: 0.2rem;
+}
+
+.testimonial-rating i {
+    filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.3));
+}
+
+/* 评价文本 */
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: var(--spacing-medium);
+    color: var(--text-light);
+    line-height: 1.6;
+    position: relative;
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+    content: '"';
+    color: var(--primary-color);
+    font-size: 1.5em;
+    font-family: serif;
+}
+
+/* 评价作者 */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    color: var(--text-muted);
+    margin-top: var(--spacing-medium);
+    padding-top: var(--spacing-medium);
+    border-top: 1px solid var(--border-color);
+}
+
+.testimonial-author i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* 动画效果 */
+.testimonial-card {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-medium);
+    }
+
+    .testimonial-card {
+        padding: var(--spacing-medium);
+    }
+}
+
+/* 深色主题特定样式 */
+.testimonial-card {
+    background: var(--background-alt);
+    border: 1px solid var(--border-color);
+}
+
+.testimonial-text {
+    color: var(--text-light);
+}
+
+.testimonial-author {
+    color: var(--text-muted);
+    border-top-color: var(--border-color);
+} 

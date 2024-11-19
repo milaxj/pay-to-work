@@ -1,0 +1,52 @@
+/* 支付页面样式 */
+
+/* 支付容器 */
+.payment-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+}
+
+/* 支付信息区域 */
+.payment-info {
+    margin-bottom: var(--spacing-large);
+}
+
+/* 支付说明 */
+.payment-instruction {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: var(--spacing-medium);
+}
+
+/* 套餐列表 */
+.package-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-large);
+    margin: var(--spacing-large) 0;
+}
+
+/* 二维码图片 */
+.qr-code-image {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin: var(--spacing-medium) auto;
+    display: block;
+}
+
+/* 免责声明 */
+.disclaimer {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+    margin-top: var(--spacing-large);
+    padding: var(--spacing-medium);
+    border-top: 1px solid var(--border-color);
+}
+
+/* 删除线文本 */
+del {
+    color: #999;
+} 

@@ -3,66 +3,62 @@
 {% block title %}加班额外付费 - 付费上班有限公司{% endblock %}
 
 {% block content %}
-<div class="overtime-container">
-    <h1 class="section-title">加班额外付费</h1>
-    <p class="section-subtitle">解锁更多加班特权，享受无限加班乐趣</p>
+<div class="container overtime-container">
+    <h1 class="section-title text-center">加班额外付费</h1>
+    <p class="section-subtitle text-center">解锁更多加班特权，享受无限加班乐趣</p>
 
-    <div class="overtime-options">
-        <div class="overtime-card">
-            <div class="overtime-header">
+    <div class="packages-grid">
+        <div class="package-card">
+            <div class="package-header">
                 <i class="fas fa-moon"></i>
-                <h3>深夜加班套餐</h3>
+                <h3 class="card-title">深夜加班套餐</h3>
             </div>
-            <div class="overtime-price">               
-            </div>
-            <div class="overtime-features">
-                <p>享受寂静的办公环境</p>
-                <p>独享办公空调</p>
-                <p>免费咖啡续杯</p>
-            </div>
+            <ul class="package-features">
+                <li><i class="fas fa-check"></i> 享受寂静的办公环境</li>
+                <li><i class="fas fa-check"></i> 独享办公空调</li>
+                <li><i class="fas fa-check"></i> 免费咖啡续杯</li>
+            </ul>
             <button class="package-button" onclick="showModal('night')">立即预订</button>
         </div>
 
-        <div class="overtime-card premium">
-            <div class="overtime-header">
+        <div class="package-card premium">
+            <div class="package-header">
                 <i class="fas fa-calendar-alt"></i>
-                <h3>周末加班套餐</h3>
+                <h3 class="card-title">周末加班套餐</h3>
             </div>
-            <div class="overtime-price">
-            </div>
-            <div class="overtime-features">
-                <p>专属工位预留</p>
-                <p>加班餐补（自费）</p>
-                <p>24小时空调保障</p>
-            </div>
+            <ul class="package-features">
+                <li><i class="fas fa-check"></i> 专属工位预留</li>
+                <li><i class="fas fa-check"></i> 加班餐补（自费）</li>
+                <li><i class="fas fa-check"></i> 24小时空调保障</li>
+            </ul>
             <button class="package-button" onclick="showModal('weekend')">马上体验</button>
         </div>
 
-        <div class="overtime-card luxury">
+        <div class="package-card luxury">
             <div class="sale-tag">限时优惠</div>
-            <div class="overtime-header">
+            <div class="package-header">
                 <i class="fas fa-calendar-week"></i>
-                <h3>节假日加班套餐</h3>
+                <h3 class="card-title">节假日加班套餐</h3>
             </div>
             <div class="performance-price">
                 <del>¥3,888</del><br>
                 现仅需<span>¥10!</span>
             </div>
-            <div class="overtime-features">
-                <p>VIP工位预留</p>
-                <p>专属泡面柜</p>
-                <p>加班荣誉证书</p>
-            </div>
+            <ul class="package-features">
+                <li><i class="fas fa-check"></i> VIP工位预留</li>
+                <li><i class="fas fa-check"></i> 专属泡面柜</li>
+                <li><i class="fas fa-check"></i> 加班荣誉证书</li>
+            </ul>
             <button class="package-button" onclick="showModal('holiday')">尊享预订</button>
         </div>
     </div>
 </div>
 
-<!-- 添加模态框 -->
+<!-- 支付模态框 -->
 <div id="paymentModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
+        <h2 id="modalTitle" class="modal-title"></h2>
         <img id="modalQR" src="" alt="支付二维码" class="modal-image">
         <p class="modal-text">请使用微信扫码支付</p>
     </div>
@@ -103,6 +99,21 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            if (href.startsWith('/#')) {
+                e.preventDefault();
+                window.location.href = href;
+            }
+        });
+    });
+});
 </script>
 {% endblock %}
 {% endblock %} 

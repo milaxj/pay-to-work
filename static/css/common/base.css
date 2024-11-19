@@ -1,0 +1,150 @@
+/* 基础样式设置 */
+
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 根元素样式 */
+:root {
+    /* 颜色变量 */
+    --primary-color: #00ff9d;  /* 亮绿色 */
+    --secondary-color: #2d2d2d;
+    --accent-color: #00ff9d;
+    
+    /* 背景色 */
+    --background-color: #1a1a1a;  /* 深灰色背景 */
+    --background-alt: #2d2d2d;    /* 稍浅的灰色 */
+    
+    /* 文本颜色 */
+    --text-color: #ffffff;
+    --text-light: #cccccc;
+    --text-muted: #999999;
+    
+    /* 边框颜色 */
+    --border-color: #404040;
+    --border-light: #333333;
+    
+    /* 字体变量 */
+    --font-main: 'Microsoft YaHei', sans-serif;
+    --font-size-base: 16px;
+    
+    /* 间距变量 */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+
+    /* 阴影 */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+    
+    /* 渐变 */
+    --gradient-primary: linear-gradient(45deg, #00ff9d, #00ccff);
+    --gradient-secondary: linear-gradient(45deg, #2d2d2d, #404040);
+}
+
+/* 基础标签样式 */
+body {
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* 链接样式 */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-medium);
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* 段落样式 */
+p {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-medium);
+}
+
+/* 表单元素样式 */
+input, select, textarea {
+    background-color: var(--background-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: var(--spacing-small);
+    border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.2);
+}
+
+/* 按钮基础样式 */
+button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* 卡片基础样式 */
+.card {
+    background-color: var(--background-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+}
+
+/* 模态框基础样式 */
+.modal {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: var(--background-alt);
+    border: 1px solid var(--border-color);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+} 

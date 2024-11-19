@@ -1,0 +1,137 @@
+/* 布局相关样式 */
+
+/* 导航栏布局 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 60px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--spacing-medium);
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-medium);
+    position: static;
+    transform: none;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    transition: color 0.3s ease;
+    background: none;
+    backdrop-filter: none;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* 主要内容容器 */
+.main-content {
+    padding-top: 60px; /* 与导航栏高度相同 */
+    min-height: calc(100vh - 100px); /* 减去导航栏和页脚的高度 */
+    padding-bottom: 40px; /* 为页脚留出空间 */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium);
+}
+
+/* 页脚布局 - 更新高度和位置 */
+.footer {
+    background-color: var(--background-alt);
+    height: 40px; /* 减小页脚高度 */
+    position: fixed; /* 固定在底部 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center; /* 垂直居中内容 */
+}
+
+.footer-content {
+    text-align: center;
+    width: 100%;
+    color: var(--text-light);
+    line-height: 1.2; /* 调整行高 */
+}
+
+.footer-content p {
+    margin: 0; /* 移除段落边距 */
+    font-size: 0.9em; /* 稍微减小字体大小 */
+    color: var(--text-muted);
+}
+
+/* 网格布局 */
+.grid {
+    display: grid;
+    gap: var(--spacing-medium);
+}
+
+/* 弹性布局 */
+.flex {
+    display: flex;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--background-color);
+        flex-direction: column;
+        padding: var(--spacing-medium);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .container {
+        padding: 0 var(--spacing-small);
+    }
+} 

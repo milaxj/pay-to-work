@@ -1,0 +1,22 @@
+/* 二维码页面样式 */
+
+/* 二维码容器 */
+.qr-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+}
+
+/* 二维码内容 */
+.qr-content {
+    text-align: center;
+    padding: var(--spacing-large);
+}
+
+/* 二维码图片 */
+.qr-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: var(--spacing-medium) auto;
+} 

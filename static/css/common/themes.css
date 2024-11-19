@@ -1,0 +1,130 @@
+/* 主题相关样式 */
+
+/* 深色主题 (默认) */
+:root {
+    /* 主色调 */
+    --primary-color: #00ff9d;  /* 亮绿色 */
+    --secondary-color: #2d2d2d;
+    --accent-color: #00ff9d;
+    
+    /* 背景色 */
+    --background-color: #1a1a1a;  /* 深灰色背景 */
+    --background-alt: #2d2d2d;    /* 稍浅的灰色 */
+    
+    /* 文本颜色 */
+    --text-color: #ffffff;
+    --text-light: #cccccc;
+    --text-muted: #999999;
+    
+    /* 边框颜色 */
+    --border-color: #404040;
+    --border-light: #333333;
+    
+    /* 状态颜色 */
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    
+    /* 阴影 */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+    
+    /* 渐变 */
+    --gradient-primary: linear-gradient(45deg, #00ff9d, #00ccff);
+    --gradient-secondary: linear-gradient(45deg, #2d2d2d, #404040);
+}
+
+/* 亮色主题 */
+[data-theme="light"] {
+    /* 主色调 */
+    --primary-color: #0066cc;
+    --secondary-color: #ff4400;
+    --accent-color: #ffd700;
+    
+    /* 背景色 */
+    --background-color: #ffffff;
+    --background-alt: #f5f5f5;
+    
+    /* 文本颜色 */
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-muted: #999999;
+    
+    /* 边框颜色 */
+    --border-color: #dddddd;
+    --border-light: #eeeeee;
+    
+    /* 阴影 */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* 高对比度主题 */
+[data-theme="high-contrast"] {
+    /* 主色调 */
+    --primary-color: #00ff00;
+    --secondary-color: #ff0000;
+    --accent-color: #ffff00;
+    
+    /* 背景色 */
+    --background-color: #000000;
+    --background-alt: #1a1a1a;
+    
+    /* 文本颜色 */
+    --text-color: #ffffff;
+    --text-light: #cccccc;
+    --text-muted: #999999;
+    
+    /* 边框颜色 */
+    --border-color: #333333;
+    --border-light: #404040;
+}
+
+/* 卡片和按钮的深色样式 */
+.card {
+    background: var(--background-alt);
+    border: 1px solid var(--border-color);
+}
+
+.btn {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* 导航栏深色样式 */
+.navbar {
+    background-color: var(--background-alt);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 页脚深色样式 */
+.footer {
+    background-color: var(--background-alt);
+    border-top: 1px solid var(--border-color);
+}
+
+/* 模态框深色样式 */
+.modal-content {
+    background-color: var(--background-alt);
+    border: 1px solid var(--border-color);
+}
+
+/* 表单元素深色样式 */
+input, select, textarea {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+/* 特殊效果 */
+.shine::before {
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0, 255, 157, 0.2),
+        transparent
+    );
+} 

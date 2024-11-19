@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}支付二维码 - 付费上班有限公司{% endblock %}
+
+{% block content %}
+<div class="payment-qr-container">
+    <h1 class="section-title">请扫码支付</h1>
+    
+    <div class="qr-content">
+        <img src="{{ url_for('static', filename='images/' + qr_image) }}" 
+             alt="支付二维码" 
+             class="qr-code-image">
+        <p class="payment-instruction">请使用微信扫描二维码完成支付</p>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <a href="{{ url_for('work_rights') }}" class="back-button">
+            <i class="fas fa-arrow-left"></i> 返回选择
+        </a>
+    </div>
+</div>
+{% endblock %} 

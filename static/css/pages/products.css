@@ -1,0 +1,99 @@
+/* 产品相关页面样式（包含work_rights, performance等） */
+
+/* 产品容器 */
+.work-rights-container,
+.performance-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+}
+
+/* 产品网格 */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-large);
+    padding: var(--spacing-medium);
+}
+
+/* 产品卡片 */
+.package-card {
+    background: white;
+    border-radius: 8px;
+    padding: var(--spacing-large);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* 高级卡片样式 */
+.package-card.premium {
+    border: 2px solid var(--primary-color);
+}
+
+/* 豪华卡片样式 */
+.package-card.luxury {
+    border: 2px solid gold;
+}
+
+/* 促销标签 */
+.sale-tag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--secondary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* 产品特性列表 */
+.package-features {
+    list-style: none;
+    margin: var(--spacing-medium) 0;
+}
+
+.package-features li {
+    margin-bottom: var(--spacing-small);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+
+/* 产品按钮 */
+.package-button {
+    width: 100%;
+    padding: var(--spacing-medium);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.package-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* 修改模态框图片样式 */
+.modal-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+/* 添加图片加载动画 */
+.modal-image {
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+} 

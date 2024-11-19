@@ -1,0 +1,63 @@
+/* 加入页面样式 */
+
+/* 加入页面容器 */
+.join-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+}
+
+/* 团队网格布局 */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-large);
+    margin: var(--spacing-large) 0;
+}
+
+/* 团队成员卡片 */
+.team-card {
+    text-align: center;
+    padding: var(--spacing-large);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 团队成员头像 */
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-medium);
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-avatar i {
+    font-size: 2rem;
+}
+
+/* 团队成员信息 */
+.team-name {
+    font-weight: bold;
+    margin: var(--spacing-small) 0;
+}
+
+.team-quote {
+    font-style: italic;
+    color: #666;
+}
+
+/* 加入CTA部分 */
+.join-cta {
+    background-color: #f5f5f5;
+    padding: var(--spacing-large);
+    border-radius: 8px;
+    margin-top: var(--spacing-large);
+} 

@@ -3,50 +3,201 @@
 {% block title %}首页 - 付费上班有限公司{% endblock %}
 
 {% block content %}
-<div class="hero">
-    <h1 class="hero-title">付费上班，让你实现财务负增长的新境界！</h1>
-    <p class="hero-subtitle">全球首屈一指的"员工反向收入"服务商</p>
-    <a href="{{ url_for('join') }}" class="btn" style="--clr: #0f0;"><span>立即加入</span></a>
+<div class="fullpage-container">
+    <!-- Hero部分 -->
+    <section id="hero" class="fullpage-section hero">
+        <h1 class="hero-title animate-fade-in">付费上班，让你实现财务负增长的新境界！</h1>
+        <p class="hero-subtitle animate-fade-in">全球首屈一指的"员工反向收入"服务商</p>
+        <a href="#join" class="glow-btn" style="--clr: #0f0;"><span>立即加入</span></a>
+        
+        <!-- 添加服务特性部分 -->
+        <div class="features-container">
+            <div class="feature-card animate-slide-in" style="--delay: 0.1s">
+                <div class="face front">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>上班权购买</h3>
+                    <p class="feature-description">多种套餐任您选择</p>
+                </div>
+                <div class="face back">
+                    <p>从"经济型负收入体验"到"奢华型职场奉献套餐"，总有一款适合您</p>
+                    <a href="{{ url_for('work_rights') }}" class="feature-button shine">
+                        <i class="fas fa-arrow-right"></i> 立即购买
+                    </a>
+                </div>
+            </div>
+
+            <div class="feature-card animate-slide-in" style="--delay: 0.2s">
+                <div class="face front">
+                    <i class="fas fa-clock"></i>
+                    <h3>加班额外付费</h3>
+                    <p class="feature-description">加班机会难得</p>
+                </div>
+                <div class="face back">
+                    <p>加班机会难得，当然要多付费！体验"奉献自我"的职场真谛</p>
+                    <a href="{{ url_for('overtime') }}" class="feature-button shine">
+                        <i class="fas fa-arrow-right"></i> 马上充值
+                    </a>
+                </div>
+            </div>
+
+            <div class="feature-card animate-slide-in" style="--delay: 0.3s">
+                <div class="face front">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>绩效充值</h3>
+                    <p class="feature-description">解锁升职新姿势</p>
+                </div>
+                <div class="face back">
+                    <p>解锁升职新姿势，购买即可立刻变身虚拟部门主管</p>
+                    <a href="{{ url_for('performance') }}" class="feature-button shine">
+                        <i class="fas fa-arrow-right"></i> 升职充值
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-hint">
+            <i class="fas fa-chevron-down"></i>
+            <span>向下滚动了解更多</span>
+        </div>
+    </section>
+
+    <!-- 关于我们部分 -->
+    <section id="about" class="fullpage-section about">
+        <h2 class="section-title text-center animate-fade-in">关于我们</h2>
+        <div class="about-content">
+            <div class="about-text animate-slide-in">
+                <p class="text-content">付费上班有限公司，全球首屈一指的"员工反向收入"服务商，成立于21世纪初。我们秉持"工作是奢侈品，花钱才能享受"的宗旨，勇敢摒弃传统"资本家付钱"的老套模式，首创员工付费的商业模式。</p>
+            </div>
+            <div class="mission-vision card animate-fade-in" style="--delay: 0.4s">
+                <h3 class="card-title">公司使命</h3>
+                <p class="text-content">打造一个让员工为上班机会倾家荡产的幸福职场。</p>
+                <h3 class="card-title">愿景</h3>
+                <p class="text-content">实现未来员工零薪资的理想社会。引领职场新风潮，让每个人都意识到："能上班，已是莫大的荣幸"。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价部分 -->
+    <section id="testimonials" class="fullpage-section testimonials">
+        <h2 class="section-title text-center animate-fade-in">用户评价</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-fade-in" style="--delay: 0.1s">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"从前我只需要忍受剥削，现在我还得为剥削付钱！这体验实在新鲜！"</p>
+                <div class="testimonial-author">
+                    <i class="fas fa-user-circle"></i>
+                    <span>某资深社畜</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card animate-fade-in" style="--delay: 0.2s">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"太棒了，付费上班有限公司帮我彻底摆脱了收入的压力，因为我已经没有收入了。"</p>
+                <div class="testimonial-author">
+                    <i class="fas fa-user-circle"></i>
+                    <span>高额负债员工</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card animate-fade-in" style="--delay: 0.3s">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p class="testimonial-text">"自从加入付费上班，我的钱包终于不再鼓鼓的了！每天都能体验到轻装上阵的快感！"</p>
+                <div class="testimonial-author">
+                    <i class="fas fa-user-circle"></i>
+                    <span>快乐破产人</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 加入我们部分 -->
+    <section id="join" class="fullpage-section join">
+        <h2 class="section-title text-center animate-fade-in">加入我们</h2>
+        <div class="team-grid">
+            <div class="team-card animate-slide-in" style="--delay: 0.1s">
+                <div class="team-avatar">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="card-title">公司董事长</h3>
+                <p class="team-name">吴钱</p>
+                <p class="team-quote">"让员工心甘情愿地付费，是我们的终极目标"</p>
+            </div>
+
+            <div class="team-card animate-slide-in" style="--delay: 0.2s">
+                <div class="team-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="card-title">员工1</h3>
+                <p class="team-name">********7726</p>
+                <p class="team-quote">"每天都在为公司充值，我感到很光荣"</p>
+            </div>
+
+            <div class="team-card animate-slide-in" style="--delay: 0.3s">
+                <div class="team-avatar">
+                    <i class="fas fa-user-secret"></i>
+                </div>
+                <h3 class="card-title">员工2</h3>
+                <p class="team-name">某不知名股东</p>
+                <p class="team-quote">"能在这里花钱上班，是我最正确的人生选择"</p>
+            </div>
+        </div>
+        <div class="join-cta text-center mt-5 animate-fade-in">
+            <a href="{{ url_for('work_rights') }}" class="btn btn-primary btn-lg shine">
+                <i class="fas fa-hand-holding-usd"></i>
+                立即充值入职
+            </a>
+        </div>
+    </section>
 </div>
 
-<div class="features">
-    <div class="feature-card">
-        <div class="face front">
-            <i class="fas fa-money-bill-wave"></i>
-            <h3>上班权购买</h3>
-        </div>
-        <div class="face back">
-            <p>多种套餐任您选择，从"经济型负收入体验"到"奢华型职场奉献套餐"</p>
-            <a href="{{ url_for('work_rights') }}" class="feature-button">
-                <i class="fas fa-arrow-right"></i> 立即购买
-            </a>
-        </div>
-    </div>
-
-    <div class="feature-card">
-        <div class="face front">
-            <i class="fas fa-clock"></i>
-            <h3>加班额外付费</h3>
-        </div>
-        <div class="face back">
-            <p>加班机会难得，当然要多付费！体验"奉献自我"的职场真谛</p>
-            <a href="{{ url_for('overtime') }}" class="feature-button">
-                <i class="fas fa-arrow-right"></i> 马上充值
-            </a>
-        </div>
-    </div>
-
-    <div class="feature-card">
-        <div class="face front">
-            <i class="fas fa-chart-line"></i>
-            <h3>绩效充值</h3>
-        </div>
-        <div class="face back">
-            <p>解锁升职新姿势，购买即可立刻变身虚拟部门主管</p>
-            <a href="{{ url_for('performance') }}" class="feature-button">
-                <i class="fas fa-arrow-right"></i> 升职充值
-            </a>
-        </div>
+<!-- 各种模态框 -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <img id="modalQR" src="" alt="支付二维码" class="modal-image">
+        <p class="modal-text text-center">请使用微信扫码支付</p>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 页面加载完成后初始化滚动监听
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有导航链接
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // 为每个导航链接添加点击事件
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                e.preventDefault();
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
+</script>
 {% endblock %} 
