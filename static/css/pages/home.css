@@ -24,19 +24,225 @@
 /* Hero区域样式 */
 .hero {
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('/static/images/mmexport1731908122620.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加多层动态效果 */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, rgba(0, 255, 157, 0.15), rgba(0, 0, 0, 0.1)),
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 157, 0.1), transparent 50%);
+    animation: pulseGradient 4s ease-in-out infinite;
+}
+
+/* 添加光束效果 */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 255, 157, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: lightBeam 8s linear infinite;
+}
+
+/* 修改粒子容器样式 */
+.hero .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* 添加多个粒子 */
+.hero .particles::before,
+.hero .particles::after,
+.hero .particles span {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(0, 255, 157, 0.5);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px rgba(0, 255, 157, 0.5),
+        0 0 20px rgba(0, 255, 157, 0.3),
+        0 0 30px rgba(0, 255, 157, 0.1);
+}
+
+/* 为每个粒子设置不同的动画 */
+.hero .particles::before {
+    left: -10px;
+    animation: particleLeft 15s linear infinite;
+}
+
+.hero .particles::after {
+    right: -10px;
+    animation: particleRight 15s linear infinite;
+}
+
+.hero .particles span:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation: particleDiagonal1 20s linear infinite;
+}
+
+.hero .particles span:nth-child(2) {
+    top: 70%;
+    right: 30%;
+    animation: particleDiagonal2 18s linear infinite;
+}
+
+.hero .particles span:nth-child(3) {
+    top: 40%;
+    left: 40%;
+    animation: particleCircle 25s linear infinite;
+}
+
+.hero .particles span:nth-child(4) {
+    bottom: 30%;
+    left: 10%;
+    animation: particleZigzag 22s linear infinite;
+}
+
+.hero .particles span:nth-child(5) {
+    top: 10%;
+    right: 20%;
+    animation: particleWave 19s linear infinite;
+}
+
+/* 添加新的动画关键帧 */
+@keyframes particleDiagonal1 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100vw, 100vh);
+    }
+}
+
+@keyframes particleDiagonal2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100vw, -100vh);
+    }
+}
+
+@keyframes particleCircle {
+    0% {
+        transform: rotate(0deg) translateX(50px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(50px);
+    }
+}
+
+@keyframes particleZigzag {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50vw, -50px);
+    }
+    50% {
+        transform: translate(100vw, 0);
+    }
+    75% {
+        transform: translate(50vw, 50px);
+    }
+}
+
+@keyframes particleWave {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50vw, 50px);
+    }
+}
+
+/* 动画关键帧 */
+@keyframes pulseGradient {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes lightBeam {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
+}
+
+@keyframes particleLeft {
+    0% {
+        transform: translateY(-100%) translateX(0);
+    }
+    100% {
+        transform: translateY(100vh) translateX(100vw);
+    }
+}
+
+@keyframes particleRight {
+    0% {
+        transform: translateY(100vh) translateX(0);
+    }
+    100% {
+        transform: translateY(-100%) translateX(-100vw);
+    }
+}
+
+/* 确保内容在特效层之上 */
+.hero-title,
+.hero-subtitle,
+.glow-btn,
+.features-container {
+    position: relative;
+    z-index: 3;
 }
 
 .hero-title {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-medium);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: var(--spacing-large);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* 滚动提示 */
@@ -424,7 +630,7 @@
     line-height: 1.6;
 }
 
-/* 加入CTA部分样式 */
+/* 加入CTA部分式 */
 .join-cta {
     margin-top: 3rem;
     padding: 2rem;
@@ -454,10 +660,37 @@
 
 /* 关于我们部分样式 */
 .about {
-    background: var(--background-alt);
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('/static/images/mmexport1732114119549.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    overflow: hidden;
 }
 
+/* 添加渐变动画效果 */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(0, 255, 157, 0.15),
+        rgba(0, 0, 0, 0.1)
+    );
+    animation: gradientMove 8s ease infinite;
+}
+
+/* 确保内容在背景之上 */
 .about-content {
+    position: relative;
+    z-index: 2;
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
@@ -470,45 +703,24 @@
     animation: slideIn 0.5s ease forwards;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
+/* 增强文字可读性 */
+.about .section-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
-.service-item {
-    background: var(--background-color);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
-
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+.about .text-content {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .mission-vision {
-    background: var(--background-color);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-top: 3rem;
-    text-align: center;
-    opacity: 0;
+    background: rgba(45, 45, 45, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.mission-vision .card-title {
-    color: var(--primary-color);
-    margin: 1.5rem 0 1rem;
-}
-
-.mission-vision .text-content {
-    color: var(--text-light);
-    margin-bottom: 2rem;
-}
+/* 其他现有样式保持不变... */
 
 /* 动画延迟 */
 .service-item:nth-child(1) { animation-delay: 0.1s; }
@@ -586,5 +798,18 @@
     inset: 2px;
     background-color: rgba(45, 45, 45, 1);
     border-radius: 48px;
+}
+
+/* 背景动画 */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
  

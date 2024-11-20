@@ -314,7 +314,7 @@
 }
 
 /* 导航菜单优化 */
-.nav-menu {
+/* .nav-menu { */
     /* 删除或注释掉以下样式 */
     /*
     position: fixed;
@@ -326,7 +326,7 @@
     flex-direction: column;
     gap: 1rem;
     */
-}
+/* } */
 
 .nav-link {
     color: var(--text-color);
