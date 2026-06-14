@@ -11,8 +11,22 @@ def ship(screen):
     #放置在底部中央
     rect.centerx = screen_rect.centerx
     rect.bottom = screen_rect.bottom
+    movjien = Fales
     #指定位置绘制
     screen.blit(image,rect)
+
+def xiangying(ship):
+    #响应按键
+    for anjian in pygame.event.get():
+        if anjian.type == pygame.QUIT:
+            sys.exit()
+        elif anjian.type == pygame.KEYDOWN:
+            ship.rect.centerx +=1
+
+def xiangying_donzuo():
+    if 
+        
+            
 
 def run_game():
     pygame.init()
@@ -23,9 +37,7 @@ def run_game():
     #主循环
     while True:
         #监听鼠标
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
+        xiangying(ship)
         #重绘屏幕
         screen.fill(beijin)
 
